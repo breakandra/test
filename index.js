@@ -56,8 +56,8 @@ let accountData = {};
 
 let dailyActivityConfig = {
   sendDiamRepetitions: 1,
-  minSendAmount: 0.01,
-  maxSendAmount: 0.02
+  minSendAmount: 0.001,
+  maxSendAmount: 0.001
 };
 
 function loadConfig() {
@@ -66,8 +66,8 @@ function loadConfig() {
       const data = fs.readFileSync(CONFIG_FILE, "utf8");
       const config = JSON.parse(data);
       dailyActivityConfig.sendDiamRepetitions = Number(config.sendDiamRepetitions) || 1;
-      dailyActivityConfig.minSendAmount = Number(config.minSendAmount) || 0.01;
-      dailyActivityConfig.maxSendAmount = Number(config.maxSendAmount) || 0.02;
+      dailyActivityConfig.minSendAmount = Number(config.minSendAmount) || 0.001;
+      dailyActivityConfig.maxSendAmount = Number(config.maxSendAmount) || 0.001;
       addLog(`Loaded Config Successfully`, "success");
     } else {
       addLog("No config file found, using default settings.", "info");
